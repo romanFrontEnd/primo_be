@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "48efcc1c-ac48-466a-9183-a1e815b4606f",
+		"name": "BloxGaming",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7602439"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:4242/api/health"
+			},
+			"response": []
+		},
+		{
+			"name": "Play game",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4242/api/spin/result?clientSeed=AABB112233",
+					"host": [
+						"localhost"
+					],
+					"port": "4242",
+					"path": [
+						"api",
+						"spin",
+						"result"
+					],
+					"query": [
+						{
+							"key": "clientSeed",
+							"value": "AABB112233"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get game history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4242/api/spin/history?id=ef8903f2-d177-4c81-aff9-0bdfec406582",
+					"host": [
+						"localhost"
+					],
+					"port": "4242",
+					"path": [
+						"api",
+						"spin",
+						"history"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "ef8903f2-d177-4c81-aff9-0bdfec406582"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get server seed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:4242/api/hashed-server-seed"
+			},
+			"response": []
+		},
+		{
+			"name": "Verify game result",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"clientSeed\": \"AABB112233\", \"nonce\":\"2\", \"serverSeed\": \"5645f74e7f0ac61e46926efbe29119a9fae62847659ab308c76f8e7ff80921ec7cfaa93275357383d5486b869e4c1153d7788f5fa44f90aa47351ccacfb05c87c87ed1dc684773edb7f6cdb2a793aa611cd165a3961976d23e4d4112e96b6f5674a1f23a16c7578068a9258ba3cfb237685de28ee7d2d16037f7e66e94869ed0\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4242/api/spin/verify"
+			},
+			"response": []
+		}
+	]
+}
